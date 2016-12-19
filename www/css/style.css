@@ -1,0 +1,208 @@
+
+/**
+*	Minesweeper Game
+*/
+
+.start-menu {
+	padding: 10px;
+}
+
+.start-menu button {
+	margin-bottom: 5px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.display-count {
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 100px;
+	background: #FFF;
+	color: #313131;
+	font-size: 40px;
+	line-height: 40px;
+	border: 2px solid #3C3C3C;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.display-count img {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+}
+
+.instructions {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.mine-row {
+	margin: 0 auto;
+	display: block;
+	height: 57px;
+	width: 456px;
+	text-align: center;
+	background: #202020;
+}
+
+.mine-column {
+	cursor: pointer;
+	height: 55px;
+	width: 55px;
+	display: inline-block;
+	border: 6px outset #ddd;
+	background-color: #eee;
+	position: relative;
+	margin: 1px;
+}
+
+.mine-pressed {
+	border: 6px inset transparent;
+}
+
+.mine-blow {
+	pointer-events: none;
+	cursor: none;
+	background-position: center;
+	background-size: 20px 20px;
+	border: 6px inset #ddd;
+}
+
+.mine-flagged {
+	background: url("./flag.png") no-repeat #eee;
+	background-position: center;
+	background-size: 50px 42px;
+	border: 6px inset #ddd;
+}
+
+.mine-row span {
+	margin: 0px;
+	padding: 0px 0px 0px 2px;
+	font-size: 35px;
+	line-height: 45px;
+}
+
+.blow-efect {
+	z-index: 100;
+	position: absolute;
+	top: -3px;
+	left: -4px;
+	visibility: hidden;
+	width: 50px;
+	height: 50px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 560px) {
+	.mine-row {
+		display: block;
+		height: 37px;
+		width: 298px;
+		background: #202020;
+	}
+
+	.mine-column {
+		cursor: pointer;
+		height: 35px;
+		width: 35px;
+		display: inline-block;
+		border: 2px outset #ddd;
+		background-color: #eee;
+		position: relative;
+		margin: 1px;
+	}
+
+	.mine-pressed {
+		border: 2px solid transparent;
+	}
+
+	.mine-blow {
+		pointer-events: none;
+		cursor: none;
+		background-position: center;
+		background-size: 12px 12px;
+		border: 2px solid #ddd;
+	}
+
+	.mine-flagged {
+		background: url("./flag.png") no-repeat #eee;
+		background-position: center;
+		background-size: 30px 25px;
+		border: 2px solid #ddd;
+	}
+
+	.mine-row span {
+		margin: 0px;
+		padding: 0px 2px 0px 0px;
+		font-size: 20px;
+		line-height: 32px;
+	}
+
+	.blow-efect {
+		z-index: 100;
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		visibility: hidden;
+		width: 35px;
+		height: 35px;
+	}
+}
+
+@-webkit-keyframes blow {
+	15% {
+		-webkit-transform: scale(5,5);
+		transform: scale(5,5);
+	}
+	100% {
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1);
+	}
+}
+@keyframes blow {
+	15% {
+		-webkit-transform: scale(5,5);
+		transform: scale(5,5);
+	}
+	100% {
+		-webkit-transform: scale(1,1);
+		transform: scale(1,1);
+	}
+}
+
+.mine-blow .blow-efect {
+	visibility: visible;
+	-webkit-animation: blow 0.3s;
+	animation: blow 0.3s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+}
+
+/* slide out to the left */
+@keyframes slideOutLeft {
+	to {
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from {
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+}
+
+.hide {
+	display: none;
+}
+
+.disable * {
+	pointer-events: none;
+	cursor: none;
+}

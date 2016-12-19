@@ -1,0 +1,18 @@
+<ion-view title="Game" ng-controller="GameCtrl">
+    <ion-content padding="true" class="has-header">
+        <h1>Game</h1>
+        <div ng-repeat="row in minesGrid" class="mine-row">
+            <div ng-repeat="box in row" class="mine-column" ng-class="box.state" on-tap="onTap(box)" on-hold="onHold(box)">
+                <span>{{box.count}}</span>
+                <img src="css/mine.png" class="blow-efect">
+            </div>
+        </div>
+        <div class="display-count">
+            <img src="css/mine.png"> {{minesCount}}
+        </div>
+        <div class="instructions">
+            <p>Tap: Mark cell as empty</p>
+            <p>Hold: Mark cell as suspicious</p>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view title="Minesweeper" ng-controller="StartCtrl">
+	<ion-content padding="true" class="has-header start-menu">
+        <h1>Welcome</h1>
+        <p>The objective of the game is to clear a rectangular board containing hidden "mines" without detonating any of them.</p>
+        <p>Please select a difficulty:</p>
+        <button type="button" class="button button-positive button-block" ng-click="initiateGame(1)">
+            Easy (10 Mines)
+        </button>
+        <button type="button" class="button button-positive button-block" ng-click="initiateGame(2)">
+            Normal (20 Mines)
+        </button>
+        <button type="button" class="button button-positive button-block" ng-click="initiateGame(3)">
+            Hard (30 Mines)
+        </button>
+	</ion-content>
+</ion-view>
